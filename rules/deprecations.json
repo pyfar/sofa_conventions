@@ -1,0 +1,12 @@
+{
+    "GLOBAL:SOFAConventions": {
+        "GeneralFIRE": "GenerelFIR-E",
+        "MultiSpeakerBRIR": "SingleRoomSRIR",
+        "MusicalInstrumentDirectivityTF": "FreeFieldDirectivityTF",
+        "SimpleBRIR": "SingleRoomSRIR",
+        "SingleRoomDRIR": "SingleRoomSRIR",
+        "SimpleFreeFieldDirectivityTF": "FreeFieldDirectivityTF",
+        "SimpleFreeFieldSOS": "SimpleFreeFieldHRSOS",
+        "SimpleFreeFieldTF": "SimpleFreeFieldHRTF"
+    }
+}
