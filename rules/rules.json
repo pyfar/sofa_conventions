@@ -769,6 +769,12 @@
             "EmitterView"
         ]
     },
+    "EmitterDescriptions": {
+        "value": null,
+        "general": [
+            "GLOBAL:EmitterDescription"
+        ]
+    },
     "RoomVolume": {
         "value": null,
         "general": [

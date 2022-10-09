@@ -316,6 +316,11 @@ rules = {
     "EmitterUp": {
         "value": None,
         "general": ["EmitterView"]},
+    # Check if dependencies of EmitterDescriptions are contained (specified in
+    # 5.3, D.12.5, D.13.5, D.14.5, D15.5)
+    "EmitterDescriptions": {
+        "value": None,
+        "general": ["GLOBAL:EmitterDescription"]},
     # Room ----------------------------------------------------------------
     # Possible values and dependencies are specified in
     # AES69-2020 Section 4.7.7
