@@ -21,7 +21,7 @@
         "comment": "This conventions follows GeneralFIR but the data is stored as second-order section (SOS) coefficients."
     },
     "GLOBAL:SOFAConventionsVersion": {
-        "default": "2.0",
+        "default": "1.0",
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",

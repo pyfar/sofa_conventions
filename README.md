@@ -1,23 +1,27 @@
-# sofar conventions
+# SOFA conventions
 
- A package to verify SOFA files. Updating and writing data requires the sofar
- package available from https://github.com/pyfar/sofar and can be installed
- via
+Complete definition of SOFA conventions according to AES69 are contained in the
+folders *conventions* and *rules*. The conventions are intended to be used in
+applications that read or write SOFA data. Test data violating the conventions
+are contained in *data*. This data is intended for testing if an application
+correctly verifies data against AES69 when reading it. Updating and writing
+data partly requires the sofar package available from
+<https://github.com/pyfar/sofar> and can be installed via
 
  `pip install sofar`
 
 AES69-2022: *AES standard for file exchange - Spatial acoustic data file
 format*, Audio Engineering Society, Inc., New York, NY, USA.
 
- ## Conventions
+## 1. Conventions
 
- This folder contains the official SOFA conventions as json and csv files. SOFA
- conventions are the basis of SOFA files, a data format to store spatially
- distributed acoustic data. They also contain basic information for verifying
- the content inside SOFA files. The conventions are tested as part of the sofar
- package.
+This folder contains the official SOFA conventions as json and csv files. SOFA
+conventions are the basis of SOFA files, a data format to store spatially
+distributed acoustic data. They also contain basic information for verifying
+the content inside SOFA files. The conventions are tested as part of the sofar
+package.
 
-## Data
+## 2. Data
 
 Contains SOFA files that each contain exactly one invalid entry. They are
 written with
@@ -27,20 +31,18 @@ written with
 and are intended for testing SOFA APIs. See the following section for more
 details.
 
-## Rules
+## 3. Rules
 
-Verification rules are contained as json files in the folder
-
-`rules`
-
-they are written by running
+Contains Verification rules as json files that are needed for a complete
+verification of SOFA files. They are written by running
 
 `write_verification_rules.py`
 
+### Verification of SOFA files
+
 The following details how SOFA files must be verified to follow the SOFA
-standard AES69-2020. The verification rules make use of the SOFA conventions
-contained in the folder ../conventions and the json files contained in this
-folder and explained below.
+standard AES69. The verification rules make use of the SOFA conventions
+and the verification rules. The verification requires the following steps:
 
 1. Mandatory variables and attributes must be contained in the file. Such data
    has the flag "m" in the conventions.
@@ -78,10 +80,10 @@ The rules were manually extracted from the SOFA Standard AES69-2020. Note that
 the json files are written with `write_verification_rules.py` where additional
 comments on the rules can be found.
 
-
-### data.json
+### rules.json
 
 Contains all verification rules
+
 - that can not be derived from the SOFA conventions
 - that do not pertain to units and unit strings
 
@@ -91,7 +93,7 @@ detailed for unit_aliases.json (see below)
 The rules are contained in a json file with the following structure
 (explanation below, examples refer to rules.json)
 
-```
+```python
 {
    key_1: {
       "value": values
@@ -129,12 +131,12 @@ The rules are contained in a json file with the following structure
 }
 ```
 
-### KEYS
+#### Keys
 
 `key_1`, `key_2`, ... `key_N` are the names of SOFA variables (e.g.,
 'ReceiverPosition') or attributes (e.g., 'GLOBAL_DataType').
 
-### VALUES
+#### Values
 
 `values` are either a list of possible values that a variable of attribute must
 have or null, if the variable or attribute can have any value.
@@ -143,7 +145,7 @@ EXAMPLE: 'GLOBAL_DataType' (`key`) can be ["FIR", "FIR-E", "FIRE" "TF", "TF-E",
          'GLOBAL_DataType' has any other value. If `values` was null,
          'GLOBAL_DataType' could have any value.
 
-### DEPENDENCIES
+#### Dependencies
 
 A variable or attribute (`key`) can have two different kinds of dependencies.
 general" and "specific". If there are such dependencies, a `key` is
@@ -151,14 +153,14 @@ followed by the corresponding fields.
 EXAMPLE: 'GLOBAL_DataType' (`key`) has "specific" dependencies and
          'ListenerPosition_Type' (`key`) has "general" dependencies.
 
-### GENERAL DEPENDENCIES
+##### General Dependencies
 
 General dependencies are simple. The contain an list that contains an arbitrary
 number of variables and attributes (`sub_keys`), which must be contained in a
 SOFA object IF `key` is contained.
 EXAMPLE: 'ListenerView_Type' must be contained if 'ListenerView' is contained.
 
-### SPECIFIC DEPENDENCIES
+##### Specific Dependencies
 
 Specific dependencies are more complex. They describe dependencies for a
 variable or attribute (`sub_key_1`, `sub_key_2`, ..., `sub_key_N`) that only
@@ -181,8 +183,6 @@ have to be enforced if `key` has a specific value (`value_1`, `value_2`, ...
    EXAMPLE: The error message for the case described above is "an integer
             multiple of 6 greater 0"
 
-
-
 ### unit_aliases.json
 
 Contains a list of possible variants of unit names. The structure is as follows
@@ -204,3 +204,98 @@ Contains a list of possible variants of unit names. The structure is as follows
 EXAMPLE: The unit "metre" (`reference_unit_1`) can also be written "metres",
          "meter", and "meters" (`variant_1_unit_1`, `variant_2_unit_1`,
          `variant_3_unit_1`).
+
+### deprecations.json
+
+Contains a list of deprecated conventions and the convention that replaces
+them.
+
+### upgrade.json
+
+Contains rules for upgrading deprecated conventions. Upgrading a convention
+requires the following steps
+
+1. Replace the convention, e.g., switch from *MultiSpeakerBRIR* to
+   *SingleRoomMIMOSRIR*. Note that this dot not change any data. It only
+   changes what data is expected to be stored in a SOFA file.
+2. Update the fields *GLOBAL:SOFAConventions*, *GLOBAL_SOFAConventionsVersion*,
+   *GLOBAL_Version*, and *GLOBAL_DataType* according to the new convention.
+3. Check if any data needs to be renamed and/or reshaped.
+4. Check if any data needs to be removed.
+5. Check if new default data needs to be specified.
+
+Steps 1, 2, and 5 are general steps and do not require specific rules. Steps
+3 and 4 are defined by the json file
+
+```python
+{
+   deprecated_convention_1: {
+      "from_to": [[[outdated versions],
+                   [possible upgrades],
+                    upgrade_key],
+                  [a possible second/third/... set in analogy to the above]],
+      upgrade_key_1: {
+         "move": {
+            source_key_1: {
+               "target": target_key,
+               "moveaxis: [from, to],
+               "deprecated_dimensions": [dimensions_1, ..., dimensions_N]
+            .
+            .
+            .
+            source_key_N: {...}
+            }
+         "remove": [target_key_1, ..., target_key_N],
+         "message": message to display after upgrading
+         }
+      },
+      upgrade_key_2: {},
+      .
+      .
+      .
+      upgrade_key_N: {}
+   },
+   deprecated_convention_2: {...},
+   .
+   .
+   .
+   deprecated_convention_N: {...}
+}
+```
+
+#### deprecated_convention
+
+The name of the deprecated convention as a string.
+
+#### from_to
+
+A list with three values
+
+1. The version numbers of the deprecated conventions that can be upgraded.
+2. The conventions and version numbers to which it can be upgraded.
+3. A unique key, that defines where the information for upgrading is given.
+
+#### move
+
+Defines data that must be moved by means of
+
+- the *source_key*, i.e., the name of the data that needs to be moved
+- the *target_key*, i.e., the new name of the data
+- *moveaxis* which defines if any of the dimensions of the data must be
+  reorganized. In this case *from* gives on or more dimension that are moved
+  in the positions defined by *to*. Dimensions start at 0 and the procedure
+  follows that of *numpy.moveaxis*
+- *deprecated_dimensions* lists data dimensions that are not supported by the
+  upgraded convnention.
+
+In case no data needs to be moved, move simply is empty, i..e, `{}`.
+
+#### remove
+
+A list of data names that must be removed. This is empty if no data needs to
+be removed, i.e., `[]`.
+
+#### message
+
+A message that should be printed after upgrading. `null` if no message is
+required.

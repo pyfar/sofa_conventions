@@ -20,7 +20,7 @@ from sofar.utils import _get_conventions
 deprecations = {
     "GLOBAL:SOFAConventions": {
         "GeneralFIRE": "GenerelFIR-E",
-        "MultiSpeakerBRIR": "SingleRoomSRIR",
+        "MultiSpeakerBRIR": "SingleRoomMIMOSRIR",
         "MusicalInstrumentDirectivityTF": "FreeFieldDirectivityTF",
         "SimpleBRIR": "SingleRoomSRIR",
         "SingleRoomDRIR": "SingleRoomSRIR",

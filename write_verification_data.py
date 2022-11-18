@@ -5,7 +5,7 @@ from sofar.utils import _complete_sofa
 import os
 import numpy as np
 
-rules, unit_aliases, deprecations = sf.Sofa._verification_rules()
+rules, unit_aliases, deprecations, _ = sf.Sofa._verification_rules()
 
 
 # -----------------------------------------------------------------------------
@@ -33,7 +33,7 @@ for key in rules:
     # write invalid SOFA file
     sf.io._write_sofa(
         os.path.join("data", "restricted_values", filename),
-        sofa, version="latest", compression=4, verify=False)
+        sofa, compression=4, verify=False)
 
 del key, key_sf, sofa, filename
 
@@ -66,7 +66,7 @@ for key in rules:
         # write invalid SOFA file
         sf.io._write_sofa(os.path.join(
             "data", "general_dependencies", filename),
-            sofa, version="latest", compression=4, verify=False)
+            sofa, compression=4, verify=False)
 
 del key, key_sf, sub, sub_sf, sofa, filename
 
@@ -113,7 +113,7 @@ for key in keys:
                 print(filename)
                 sf.io._write_sofa(os.path.join(
                     "data", "specific_dependencies", filename),
-                    sofa, version="latest", compression=4, verify=False)
+                    sofa, compression=4, verify=False)
 
             # test deleting sub
             sofa._protected = False
@@ -123,7 +123,7 @@ for key in keys:
             print(filename)
             sf.io._write_sofa(os.path.join(
                 "data", "specific_dependencies", filename),
-                sofa, version="latest", compression=4, verify=False)
+                sofa, compression=4, verify=False)
 
 del keys, key, key_sf, value_key, sub, sub_sf, sofa, value_sub, filename
 
@@ -155,7 +155,7 @@ for data_type in rules["GLOBAL:DataType"]["specific"]:
             print(filename)
             sf.io._write_sofa(os.path.join(
                 "data", "specific_dependencies", filename),
-                sofa, version="latest", compression=4, verify=False)
+                sofa, compression=4, verify=False)
 
         # test deleting the attribute
         sofa._protected = False
@@ -165,7 +165,7 @@ for data_type in rules["GLOBAL:DataType"]["specific"]:
         print(filename)
         sf.io._write_sofa(os.path.join(
                 "data", "specific_dependencies", filename),
-                sofa, version="latest", compression=4, verify=False)
+                sofa, compression=4, verify=False)
 
 del data_type, convention, key, key_sf, sofa, value, filename
 
@@ -191,7 +191,7 @@ for convention in rules["GLOBAL:SOFAConventions"]["specific"]:
 
         sf.io._write_sofa(os.path.join(
                 "data", "specific_dependencies", filename),
-                sofa, version="latest", compression=4, verify=False)
+                sofa, compression=4, verify=False)
 
         # test deleting the attribute
         sofa._protected = False
@@ -203,7 +203,7 @@ for convention in rules["GLOBAL:SOFAConventions"]["specific"]:
 
         sf.io._write_sofa(os.path.join(
                 "data", "specific_dependencies", filename),
-                sofa, version="latest", compression=4, verify=False)
+                sofa, compression=4, verify=False)
 
 del convention, key, key_sf, sofa, filename
 
@@ -226,7 +226,7 @@ print(filename)
 sofa.verify(issue_handling="ignore")
 sf.io._write_sofa(os.path.join(
     "data", "restricted_dimensions", filename),
-    sofa, version="latest", compression=4, verify=False)
+    sofa, compression=4, verify=False)
 
 sofa = sf.Sofa("GeneralFIR-E")
 sofa.EmitterPosition_Type = "spherical harmonics"
@@ -240,7 +240,7 @@ print(filename)
 sofa.verify(issue_handling="ignore")
 sf.io._write_sofa(os.path.join(
     "data", "restricted_dimensions", filename),
-    sofa, version="latest", compression=4, verify=False)
+    sofa, compression=4, verify=False)
 
 # test dimensions for SOS data type
 sofa = sf.Sofa("SimpleFreeFieldHRSOS")
@@ -252,7 +252,7 @@ print(filename)
 sofa.verify(issue_handling="ignore")
 sf.io._write_sofa(os.path.join(
     "data", "restricted_dimensions", filename),
-    sofa, version="latest", compression=4, verify=False)
+    sofa, compression=4, verify=False)
 
 # test dimensions for SimpleFreeFieldHRIR
 for convention in ["SimpleFreeFieldHRIR",
@@ -267,7 +267,7 @@ for convention in ["SimpleFreeFieldHRIR",
     sofa.verify(issue_handling="ignore")
     sf.io._write_sofa(os.path.join(
         "data", "restricted_dimensions", filename),
-        sofa, version="latest", compression=4, verify=False)
+        sofa, compression=4, verify=False)
 
 del sofa, filename, convention
 
@@ -295,6 +295,6 @@ for deprecated, substitute in deprecations["GLOBAL:SOFAConventions"].items():
         sofa.verify(issue_handling="ignore")
         sf.io._write_sofa(os.path.join(
             "data", "deprecations", filename),
-            sofa, version="latest", compression=4, verify=False)
+            sofa, compression=4, verify=False)
 
 del conventions, deprecated, substitute, sofa, filename

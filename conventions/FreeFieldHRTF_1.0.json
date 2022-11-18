@@ -21,7 +21,7 @@
         "comment": "This conventions is for HRTFs created under conditions where room information is irrelevant and stored as SH coefficients"
     },
     "GLOBAL:SOFAConventionsVersion": {
-        "default": "2.0",
+        "default": "1.0",
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
