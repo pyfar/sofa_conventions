@@ -303,14 +303,14 @@
         "type": "double",
         "comment": ""
     },
-    "N_LongName": {
+    "N:LongName": {
         "default": "frequency",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
         "comment": ""
     },
-    "N_Units": {
+    "N:Units": {
         "default": "hertz",
         "flags": null,
         "dimensions": null,
