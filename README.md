@@ -4,11 +4,20 @@ Complete definition of SOFA conventions according to AES69 are contained in the
 folders *conventions* and *rules*. The conventions are intended to be used in
 applications that read or write SOFA data. Test data violating the conventions
 are contained in *data*. This data is intended for testing if an application
-correctly verifies data against AES69 when reading it. Updating and writing
-data partly requires the sofar package available from
+correctly verifies data against AES69 when reading it.
+
+**Conventions are implemented according to AES69-2022
+(SOFA conventions version 2.1)**
+
+Updating teh conventions and data requires the sofar package available from
 <https://github.com/pyfar/sofar> and can be installed via
 
  `pip install sofar`
+
+To update the conventions from <https://sofaconventions.org/conventions> use
+`sofar.update_conventions()` and run `write_verification_rules.py` and
+`write_upgrade_rules.py`. To update the test data run
+`write_verification_data.py`.
 
 AES69-2022: *AES standard for file exchange - Spatial acoustic data file
 format*, Audio Engineering Society, Inc., New York, NY, USA.
