@@ -9,7 +9,7 @@ correctly verifies data against AES69 when reading it.
 **Conventions are implemented according to AES69-2022
 (SOFA conventions version 2.1)**
 
-Updating teh conventions and data requires the sofar package available from
+Updating the conventions and data requires the sofar package available from
 <https://github.com/pyfar/sofar> and can be installed via
 
  `pip install sofar`
