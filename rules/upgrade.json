@@ -1,4 +1,38 @@
 {
+    "FreeFieldDirectivityTF": {
+        "from_to": [
+            [
+                [
+                    "1.0"
+                ],
+                [
+                    "FreeFieldDirectivityTF_1.1"
+                ],
+                "1"
+            ]
+        ],
+        "1": {
+            "move": {
+                "EmitterPosition": {
+                    "target": "EmitterPosition",
+                    "moveaxis": null,
+                    "deprecated_dimensions": [
+                        "IC",
+                        "MC"
+                    ]
+                },
+                "EmitterDescription": {
+                    "target": "EmitterDescriptions",
+                    "moveaxis": null,
+                    "deprecated_dimensions": [
+                        "IS"
+                    ]
+                }
+            },
+            "remove": [],
+            "message": "Consider to add the optional data 'GLOBAL_EmitterDescription'introduced in convention version 1.1.\nWARNING: Adding 'GLOBAL_EmitterDescription' is required if 'EmitterDescriptions' is contained in the SOFA object."
+        }
+    },
     "SimpleFreeFieldHRIR": {
         "from_to": [
             [

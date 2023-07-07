@@ -26,9 +26,9 @@ for key in rules:
     sofa = _complete_sofa()
 
     # write invalid value
-    sofa._protected = False
+    sofa.protected = False
     setattr(sofa, key_sf, "invalid-value")
-    sofa._protected = True
+    sofa.protected = True
 
     # write invalid SOFA file
     sf.io._write_sofa(
@@ -101,9 +101,9 @@ for key in keys:
             sofa = _complete_sofa()
 
             # set key to correct value
-            sofa._protected = False
+            sofa.protected = False
             setattr(sofa, key_sf, value_key)
-            sofa._protected = False
+            sofa.protected = False
 
             # test a wrong value sor sub
             value_sub = rules[key]["specific"][value_key][sub]
@@ -116,9 +116,9 @@ for key in keys:
                     sofa, compression=4, verify=False)
 
             # test deleting sub
-            sofa._protected = False
+            sofa.protected = False
             delattr(sofa, sub_sf)
-            sofa._protected = True
+            sofa.protected = True
             filename = f"{key_sf}={value_key}.{sub_sf}=missing.sofa"
             print(filename)
             sf.io._write_sofa(os.path.join(
@@ -158,9 +158,9 @@ for data_type in rules["GLOBAL:DataType"]["specific"]:
                 sofa, compression=4, verify=False)
 
         # test deleting the attribute
-        sofa._protected = False
+        sofa.protected = False
         delattr(sofa, key_sf)
-        sofa._protected = True
+        sofa.protected = True
         filename = f"GLOBAL_DataType={data_type}.{key_sf}=missing.sofa"
         print(filename)
         sf.io._write_sofa(os.path.join(
@@ -181,9 +181,9 @@ for convention in rules["GLOBAL:SOFAConventions"]["specific"]:
         sofa = sf.Sofa(convention)
 
         # test a wrong value
-        sofa._protected = False
+        sofa.protected = False
         setattr(sofa, key_sf, "invalid-value")
-        sofa._protected = True
+        sofa.protected = True
 
         filename = \
             f"GLOBAL_SOFAConventions={convention}.{key_sf}=invalid-value.sofa"
@@ -194,9 +194,9 @@ for convention in rules["GLOBAL:SOFAConventions"]["specific"]:
                 sofa, compression=4, verify=False)
 
         # test deleting the attribute
-        sofa._protected = False
+        sofa.protected = False
         delattr(sofa, key_sf)
-        sofa._protected = True
+        sofa.protected = True
 
         filename = f"GLOBAL_SOFAConventions={convention}.{key_sf}=missing.sofa"
         print(filename)

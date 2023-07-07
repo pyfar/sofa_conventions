@@ -14,10 +14,20 @@ Updating the conventions and data requires the sofar package available from
 
  `pip install sofar`
 
-To update the conventions from <https://sofaconventions.org/conventions> use
-`sofar.update_conventions()` and run `write_verification_rules.py` and
-`write_upgrade_rules.py`. To update the test data run
-`write_verification_data.py`.
+To update the conventions from <https://sofaconventions.org/conventions>:
+
+- check if updates are available with
+  `sofar.update_conventions._check_congruency()`
+- run `sofar.update_conventions()`.
+- update and run `write_verification_rules.py` if a new convention was added or
+  a convention was deprecated completely.
+- update and run `write_upgrade_rules.py` if a convention was deprecated.
+- To update the verification data run `write_verification_data.py`.
+- check if tests pass in `sofar`
+- update HISTORY and VERSION
+- do a tagged commit
+- merge to master branch
+- update *sofa_conventions* submodule in sofar
 
 AES69-2022: *AES standard for file exchange - Spatial acoustic data file
 format*, Audio Engineering Society, Inc., New York, NY, USA.
