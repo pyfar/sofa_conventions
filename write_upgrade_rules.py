@@ -11,6 +11,28 @@ import json
 import os
 
 upgrade = {
+    "FreeFieldDirectivityTF": {
+        "from_to": [[["1.0"], ["FreeFieldDirectivityTF_1.1"], "1"]],
+        "1": {
+            "move": {
+                "EmitterPosition": {
+                    "target": "EmitterPosition",
+                    "moveaxis": None,
+                    "deprecated_dimensions": ["IC", "MC"]},
+                "EmitterDescription": {
+                    "target": "EmitterDescriptions",
+                    "moveaxis": None,
+                    "deprecated_dimensions": ["IS"]}
+            },
+            "remove": [],
+            "message": ("Consider to add the optional data "
+                        "'GLOBAL_EmitterDescription'"
+                        "introduced in convention version 1.1.\n"
+                        "WARNING: Adding 'GLOBAL_EmitterDescription' is "
+                        "required if 'EmitterDescriptions' is contained in "
+                        "the SOFA object.")
+        }
+    },
     "SimpleFreeFieldHRIR": {
         "from_to": [[["0.4"], ["SimpleFreeFieldHRIR_1.0"], "1"]],
         "1": {
