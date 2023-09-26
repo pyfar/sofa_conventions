@@ -138,6 +138,8 @@ for data_type in rules["GLOBAL:DataType"]["specific"]:
         convention = "SimpleFreeFieldHRSOS"
     elif data_type == "FIRE":
         convention = "MultiSpeakerBRIR"
+    elif data_type == "Audio":
+        convention = "AnnotatedEmitterAudio"
 
     for key in rules["GLOBAL:DataType"]["specific"][data_type]:
         if key.startswith("_"):
@@ -145,6 +147,8 @@ for data_type in rules["GLOBAL:DataType"]["specific"]:
 
         key_sf = key.replace(".", "_").replace(":", "_")
         sofa = sf.Sofa(convention)
+        if sofa.GLOBAL_SOFAConventionsVersion.startswith('0.'):
+            sofa.verify(mode="read")
 
         # test a wrong value
         value = rules["GLOBAL:DataType"]["specific"][data_type][key]
@@ -179,19 +183,23 @@ for convention in rules["GLOBAL:SOFAConventions"]["specific"]:
 
         key_sf = key.replace(".", "_").replace(":", "_")
         sofa = sf.Sofa(convention)
+        if sofa.GLOBAL_SOFAConventionsVersion.startswith('0.'):
+            sofa.verify(mode="read")
 
         # test a wrong value
-        sofa.protected = False
-        setattr(sofa, key_sf, "invalid-value")
-        sofa.protected = True
+        value = rules["GLOBAL:SOFAConventions"]["specific"][convention][key]
+        if value is not None:
+            sofa.protected = False
+            setattr(sofa, key_sf, "invalid-value")
+            sofa.protected = True
 
-        filename = \
-            f"GLOBAL_SOFAConventions={convention}.{key_sf}=invalid-value.sofa"
-        print(filename)
+            filename = (f"GLOBAL_SOFAConventions={convention}."
+                        f"{key_sf}=invalid-value.sofa")
+            print(filename)
 
-        sf.io._write_sofa(os.path.join(
-                "data", "specific_dependencies", filename),
-                sofa, compression=4, verify=False)
+            sf.io._write_sofa(os.path.join(
+                    "data", "specific_dependencies", filename),
+                    sofa, compression=4, verify=False)
 
         # test deleting the attribute
         sofa.protected = False
@@ -286,6 +294,11 @@ for deprecated, substitute in deprecations["GLOBAL:SOFAConventions"].items():
 
     # check if deprecated and substitute convention exist in sofar
     if deprecated in conventions:
+
+        if deprecated == "SingleTrackedAudio":
+            # This convention was never used and does not define the dimension
+            # 'R'. Thus test files can not be written in this case
+            continue
 
         sofa = sf.Sofa(deprecated, verify=False)
 
