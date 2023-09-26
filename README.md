@@ -174,7 +174,7 @@ EXAMPLE: 'GLOBAL_DataType' (`key`) has "specific" dependencies and
 
 ##### General Dependencies
 
-General dependencies are simple. The contain an list that contains an arbitrary
+General dependencies are simple. They contain a list that contains an arbitrary
 number of variables and attributes (`sub_keys`), which must be contained in a
 SOFA object IF `key` is contained.
 EXAMPLE: 'ListenerView_Type' must be contained if 'ListenerView' is contained.

@@ -1,0 +1,353 @@
+{
+    "GLOBAL:Conventions": {
+        "default": "SOFA",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:Version": {
+        "default": "2.1",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:SOFAConventions": {
+        "default": "AnnotatedReceiverAudio",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:SOFAConventionsVersion": {
+        "default": "0.2",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:APIName": {
+        "default": "",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:APIVersion": {
+        "default": "",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:ApplicationName": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:ApplicationVersion": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:AuthorContact": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:Comment": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:DataType": {
+        "default": "Audio",
+        "flags": "rm",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:History": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:License": {
+        "default": "No license provided, ask the author for permission",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:Organization": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:References": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:RoomType": {
+        "default": "free field",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:Origin": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:DateCreated": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:DateModified": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "GLOBAL:Title": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "ListenerPosition": {
+        "default": [
+            0,
+            0,
+            0
+        ],
+        "flags": "m",
+        "dimensions": "IC, MC",
+        "type": "double",
+        "comment": "Position of the head. IC if not tracked, MC if tracked."
+    },
+    "ListenerPosition:Type": {
+        "default": "cartesian",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "ListenerPosition:Units": {
+        "default": "metre",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "ReceiverPosition": {
+        "default": [
+            [
+                0,
+                0.09,
+                0
+            ],
+            [
+                0,
+                -0.09,
+                0
+            ]
+        ],
+        "flags": "m",
+        "dimensions": "rC, rCM",
+        "type": "double",
+        "comment": "Position of the ears. RC if not tracked, RCM if tracked."
+    },
+    "ReceiverPosition:Type": {
+        "default": "cartesian",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "ReceiverPosition:Units": {
+        "default": "metre",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "SourcePosition": {
+        "default": [
+            0,
+            0,
+            0
+        ],
+        "flags": "m",
+        "dimensions": "IC, MC",
+        "type": "double",
+        "comment": "Position of the virtual ensemble. IC if not tracked, MC if tracked."
+    },
+    "SourcePosition:Type": {
+        "default": "cartesian",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "SourcePosition:Units": {
+        "default": "metre",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "EmitterPosition": {
+        "default": [
+            0,
+            0,
+            0
+        ],
+        "flags": "m",
+        "dimensions": "eC, eCM",
+        "type": "double",
+        "comment": "Position of the virtual source(s). eC if not tracked, eCM if tracked."
+    },
+    "EmitterPosition:Type": {
+        "default": "cartesian",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "EmitterPosition:Units": {
+        "default": "metre",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "ListenerUp": {
+        "default": [
+            0,
+            0,
+            1
+        ],
+        "flags": "m",
+        "dimensions": "IC, MC",
+        "type": "double",
+        "comment": "Must be of the same dimensionality as ListenerView."
+    },
+    "ListenerView": {
+        "default": [
+            1,
+            0,
+            0
+        ],
+        "flags": "m",
+        "dimensions": "IC, MC",
+        "type": "double",
+        "comment": "Orientation of the head. IC if not tracked, MC if tracked."
+    },
+    "ListenerView:Type": {
+        "default": "cartesian",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "ListenerView:Units": {
+        "default": "metre",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    },
+    "M": {
+        "default": 0,
+        "flags": "m",
+        "dimensions": "m",
+        "type": "double",
+        "comment": "Time stamp of the measurements in M, defines the size of M."
+    },
+    "M:LongName": {
+        "default": "time",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Narrative name for M"
+    },
+    "M:Units": {
+        "default": "second",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Units used for M"
+    },
+    "Response": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "I, C, S",
+        "type": "string",
+        "comment": "the subject\u00e2\u20ac\u2122s response"
+    },
+    "Response:Type": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "type depends on the dimension"
+    },
+    "Response:LongName": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "narrative description of the response type"
+    },
+    "Data.Receiver": {
+        "default": [
+            0,
+            0
+        ],
+        "flags": "m",
+        "dimensions": "In, Rn",
+        "type": "double",
+        "comment": "(binaural) audio data at the receivers; n=number of audio samples"
+    },
+    "Data.SamplingRate": {
+        "default": 44100,
+        "flags": "m",
+        "dimensions": "I",
+        "type": "double",
+        "comment": ""
+    },
+    "Data.SamplingRate:Units": {
+        "default": "hertz",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": ""
+    }
+}

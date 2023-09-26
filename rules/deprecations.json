@@ -7,6 +7,7 @@
         "SingleRoomDRIR": "SingleRoomSRIR",
         "SimpleFreeFieldDirectivityTF": "FreeFieldDirectivityTF",
         "SimpleFreeFieldSOS": "SimpleFreeFieldHRSOS",
-        "SimpleFreeFieldTF": "SimpleFreeFieldHRTF"
+        "SimpleFreeFieldTF": "SimpleFreeFieldHRTF",
+        "SingleTrackedAudio": "AnnotatedEmitterAudio or AnnotatedReceiverAudio"
     }
 }

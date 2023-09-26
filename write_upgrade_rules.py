@@ -11,6 +11,24 @@ import json
 import os
 
 upgrade = {
+    "AnnotatedEmitterAudio": {
+        "from_to": [[["0.1"], ["AnnotatedEmitterAudio_0.2"], "1"]],
+        "1": {
+            "move": {},
+            "remove": [],
+            "message": ("The data in the variable 'Response' "
+                        "might have to be updated.")
+            }
+    },
+    "AnnotatedReceiverAudio": {
+        "from_to": [[["0.1"], ["AnnotatedReceiverAudio_0.2"], "1"]],
+        "1": {
+            "move": {},
+            "remove": [],
+            "message": ("The data in the variable 'Response' "
+                        "might have to be updated.")
+            }
+    },
     "FreeFieldDirectivityTF": {
         "from_to": [[["1.0"], ["FreeFieldDirectivityTF_1.1"], "1"]],
         "1": {

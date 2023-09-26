@@ -1,6 +1,7 @@
 {
     "GLOBAL:DataType": {
         "value": [
+            "Audio",
             "FIR",
             "FIR-E",
             "FIRE",
@@ -9,6 +10,12 @@
             "SOS"
         ],
         "specific": {
+            "Audio": {
+                "Data.SamplingRate": null,
+                "Data.SamplingRate:Units": [
+                    "hertz"
+                ]
+            },
             "FIR": {
                 "Data.IR": null,
                 "Data.Delay": null,
@@ -196,7 +203,10 @@
     },
     "GLOBAL:SOFAConventions": {
         "value": [
-            "FreeFieldDirectivityTF",
+            "AnnotatedEmitterAudio",
+            "AnnotatedEmitterAudio",
+            "AnnotatedReceiverAudio",
+            "AnnotatedReceiverAudio",
             "FreeFieldDirectivityTF",
             "FreeFieldHRIR",
             "FreeFieldHRTF",
@@ -213,6 +223,7 @@
             "SimpleHeadphoneIR",
             "SingleRoomMIMOSRIR",
             "SingleRoomSRIR",
+            "FreeFieldDirectivityTF",
             "GeneralFIRE",
             "MultiSpeakerBRIR",
             "SimpleFreeFieldHRIR",
@@ -221,9 +232,17 @@
             "SimpleHeadphoneIR",
             "SimpleHeadphoneIR",
             "SingleRoomDRIR",
-            "SingleRoomDRIR"
+            "SingleRoomDRIR",
+            "SingleTrackedAudio",
+            "SingleTrackedAudio"
         ],
         "specific": {
+            "AnnotatedEmitterAudio": {
+                "Data.Emitter": null
+            },
+            "AnnotatedReceiverAudio": {
+                "Data.Receiver": null
+            },
             "GeneralFIR": {
                 "GLOBAL:DataType": [
                     "FIR"

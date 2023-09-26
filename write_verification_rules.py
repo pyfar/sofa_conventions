@@ -26,7 +26,8 @@ deprecations = {
         "SingleRoomDRIR": "SingleRoomSRIR",
         "SimpleFreeFieldDirectivityTF": "FreeFieldDirectivityTF",
         "SimpleFreeFieldSOS": "SimpleFreeFieldHRSOS",
-        "SimpleFreeFieldTF": "SimpleFreeFieldHRTF"
+        "SimpleFreeFieldTF": "SimpleFreeFieldHRTF",
+        "SingleTrackedAudio": "AnnotatedEmitterAudio or AnnotatedReceiverAudio"
     }
 }
 
@@ -72,8 +73,11 @@ rules = {
     # Check value of GLOBAL_DataType (AES69-2020 Annex C)
     # (FIRE and TFE are legacy data types from SOFA version 1.0)
     "GLOBAL:DataType": {
-        "value": ["FIR", "FIR-E", "FIRE", "TF", "TF-E", "SOS"],
+        "value": ["Audio", "FIR", "FIR-E", "FIRE", "TF", "TF-E", "SOS"],
         "specific":  {
+            "Audio": {
+                "Data.SamplingRate": None,
+                "Data.SamplingRate:Units": ["hertz"]},
             "FIR": {
                 "Data.IR": None,
                 "Data.Delay": None,
@@ -131,6 +135,10 @@ rules = {
     "GLOBAL:SOFAConventions": {
         "value": _get_conventions(return_type="name"),
         "specific": {
+            "AnnotatedEmitterAudio": {
+                "Data.Emitter": None},
+            "AnnotatedReceiverAudio": {
+                "Data.Receiver": None},
             "GeneralFIR": {
                 "GLOBAL:DataType": ["FIR"]},
             "GeneralFIR-E": {
