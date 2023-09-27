@@ -6,8 +6,11 @@ applications that read or write SOFA data. Test data violating the conventions
 are contained in *data*. This data is intended for testing if an application
 correctly verifies data against AES69 when reading it.
 
-**Conventions are implemented according to AES69-2022
+**Conventions are implemented according to AES69
 (SOFA conventions version 2.1)**
+
+AES69-2022: *AES standard for file exchange - Spatial acoustic data file
+format*, Audio Engineering Society, Inc., New York, NY, USA.
 
 Updating the conventions and data requires the sofar package available from
 <https://github.com/pyfar/sofar> and can be installed via
@@ -28,9 +31,6 @@ To update the conventions from <https://sofaconventions.org/conventions>:
 - do a tagged commit
 - merge to master branch
 - update *sofa_conventions* submodule in sofar
-
-AES69-2022: *AES standard for file exchange - Spatial acoustic data file
-format*, Audio Engineering Society, Inc., New York, NY, USA.
 
 ## 1. Conventions
 
@@ -95,7 +95,7 @@ and the verification rules. The verification requires the following steps:
 7. All verification rules from rules.json must be checked (see below)
 
 The json files inside this folder contain rules for verifying SOFA files.
-The rules were manually extracted from the SOFA Standard AES69-2020. Note that
+The rules were manually extracted from the SOFA Standard AES69. Note that
 the json files are written with `write_verification_rules.py` where additional
 comments on the rules can be found.
 

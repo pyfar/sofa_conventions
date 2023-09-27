@@ -36,13 +36,13 @@ deprecations = {
 coords_min = ["cartesian", "spherical"]
 coords_full = coords_min + ["spherical harmonics"]
 
-# definition of units acordings to AES69-2020 Table 7
+# definition of units acordings to AES69 Table 7
 units_min = ["metre", "degree, degree, metre"]
 units_full = units_min + [units_min[1]]
 
 # allowed alternative versions of units
 # NOTE: AES69 allows multi-unit strings to be separated by comma, comma plus
-#       space and space (AES69-2020 Section 4.7.8). This means that the unit
+#       space and space (AES69 Section 4.7.8). This means that the unit
 #       "cubic metre" will be tested as a multi unit string and is thus also
 #       split in the aliases. A separate test for verifying that "cubic" is
 #       followed be "metre" must be performed.
@@ -59,18 +59,18 @@ unit_aliases = {
 }
 # possible values for restricted dimensions in the API
 # Dimensions for spherical harmonics (considering orders up to 100) according
-# to AES69-2020 Eq. (5) and (6)
+# to AES69 Eq. (5) and (6)
 sh_dimension = ([(N+1)**2 for N in range(100)],
                 "(N+1)**2 where N is the spherical harmonics order")
-# Dimensions for SOS (considering up to 100 sections) according to AES69-2020
-# Appenx C.5.2
+# Dimensions for SOS (considering up to 100 sections) according to AES69
+# Appendix C.5.2
 sos_dimension = ([6 * (N + 1) for N in range(100)],
                  "an integer multiple of 6 greater 0")
 
 # verification rules
 rules = {
     # Global --------------------------------------------------------------
-    # Check value of GLOBAL_DataType (AES69-2020 Annex C)
+    # Check value of GLOBAL_DataType (AES69 Annex C)
     # (FIRE and TFE are legacy data types from SOFA version 1.0)
     "GLOBAL:DataType": {
         "value": ["Audio", "FIR", "FIR-E", "FIRE", "TF", "TF-E", "SOS"],
@@ -120,7 +120,7 @@ rules = {
                         "value": sos_dimension[0],
                         "value_str": sos_dimension[1]}
                 }}}},
-    # Specified in AES69-2020 SEction 4.7.7 and Table 6
+    # Specified in AES69 Section 4.7.7 and Table 6
     "GLOBAL:RoomType": {
         "value": ["free field", "reverberant", "shoebox", "dae"],
         "specific": {
@@ -131,7 +131,7 @@ rules = {
                 "RoomCornerB": None},
             "dae": {
                 "GLOBAL:RoomGeometry": None}}},
-    # Specified in AES69-2020 Annex D
+    # Specified in AES69 Annex D
     "GLOBAL:SOFAConventions": {
         "value": _get_conventions(return_type="name"),
         "specific": {
@@ -185,12 +185,12 @@ rules = {
                 "GLOBAL:DataType": ["FIR-E"]},
             "FreeFieldDirectivityTF": {
                 "GLOBAL:DataType": ["TF"]}}},
-    # check NLongName (AES69-2020 Tables C.3 and C.4)
+    # check NLongName (AES69 Tables C.3 and C.4)
     "N:LongName": {
         "value": ["frequency"]},
     # Listener ------------------------------------------------------------
     # Possible values and dependencies are specified in
-    # AES69-2020 Section 4.7.3
+    # AES69 Section 4.7.3
     # ---------------------------------------------------------------------
     # Check values and consistency of if ListenerPosition Type and Unit
     "ListenerPosition:Type": {
@@ -220,7 +220,7 @@ rules = {
         "general": ["ListenerView"]},
     # Receiver ------------------------------------------------------------
     # Possible values and dependencies are specified in
-    # AES69-2020 Section 4.7.4
+    # AES69 Section 4.7.4
     # ---------------------------------------------------------------------
     # Check values and consistency of if ReceiverPosition Type and Unit
     "ReceiverPosition:Type": {
@@ -258,7 +258,7 @@ rules = {
         "general": ["ReceiverView"]},
     # Source --------------------------------------------------------------
     # Possible values and dependencies are specified in
-    # AES69-2020 Section 4.7.5
+    # AES69 Section 4.7.5
     # ---------------------------------------------------------------------
     # Check values and consistency of if SourcePosition Type and Unit
     "SourcePosition:Type": {
@@ -288,7 +288,7 @@ rules = {
         "general": ["SourceView"]},
     # Emitter -------------------------------------------------------------
     # Possible values and dependencies are specified in
-    # AES69-2020 Section 4.7.6
+    # AES69 Section 4.7.6
     # ---------------------------------------------------------------------
     # Check values and consistency of if EmitterPosition Type and Unit
     "EmitterPosition:Type": {
@@ -331,7 +331,7 @@ rules = {
         "general": ["GLOBAL:EmitterDescription"]},
     # Room ----------------------------------------------------------------
     # Possible values and dependencies are specified in
-    # AES69-2020 Section 4.7.7
+    # AES69 Section 4.7.7
     # ---------------------------------------------------------------------
     "RoomVolume": {
         "value": None,
