@@ -1,5 +1,5 @@
 """
-Write rules for validating SOFA files to json files
+Write rules for validating SOFA files to json files.
 
 Writes the following json files:
 rules.json
@@ -19,7 +19,7 @@ from sofar.utils import _get_conventions
 #       i.e., there are no entries in `rules` for them.
 deprecations = {
     "GLOBAL:SOFAConventions": {
-        "GeneralFIRE": "GenerelFIR-E",
+        "GeneralFIRE":"GenerelFIR-E",
         "MultiSpeakerBRIR": "SingleRoomMIMOSRIR",
         "MusicalInstrumentDirectivityTF": "FreeFieldDirectivityTF",
         "SimpleBRIR": "SingleRoomSRIR",
@@ -27,8 +27,9 @@ deprecations = {
         "SimpleFreeFieldDirectivityTF": "FreeFieldDirectivityTF",
         "SimpleFreeFieldSOS": "SimpleFreeFieldHRSOS",
         "SimpleFreeFieldTF": "SimpleFreeFieldHRTF",
-        "SingleTrackedAudio": "AnnotatedEmitterAudio or AnnotatedReceiverAudio"
-    }
+        "SingleTrackedAudio":
+            "AnnotatedEmitterAudio or AnnotatedReceiverAudio",
+    },
 }
 
 # definition of valid coordinate systems. Not defined explicitly in AES69 but
@@ -55,7 +56,7 @@ unit_aliases = {
     "degree": "degree",
     "degrees": "degree",
     "second": "second",
-    "seconds": "second"
+    "seconds": "second",
 }
 # possible values for restricted dimensions in the API
 # Dimensions for spherical harmonics (considering orders up to 100) according
@@ -118,7 +119,7 @@ rules = {
                 "_dimensions": {
                     "N": {
                         "value": sos_dimension[0],
-                        "value_str": sos_dimension[1]}
+                        "value_str": sos_dimension[1]},
                 }}}},
     # Specified in AES69 Section 4.7.7 and Table 6
     "GLOBAL:RoomType": {
@@ -199,7 +200,7 @@ rules = {
             coords_min[0]: {
                 "ListenerPosition:Units": [units_min[0]]},
             coords_min[1]: {
-                "ListenerPosition:Units": [units_min[1]]}
+                "ListenerPosition:Units": [units_min[1]]},
         }},
     # Check if dependencies of ListenerView are contained
     "ListenerView": {
@@ -212,7 +213,7 @@ rules = {
             coords_min[0]: {
                 "ListenerView:Units": [units_min[0]]},
             coords_min[1]: {
-                "ListenerView:Units": [units_min[1]]}
+                "ListenerView:Units": [units_min[1]]},
         }},
     # Check if dependencies of ListenerUp are contained
     "ListenerUp": {
@@ -237,7 +238,7 @@ rules = {
                     # receiver (assuming SH orders < 100)
                     "R": {
                         "value": sh_dimension[0],
-                        "value_str": sh_dimension[1]}}}
+                        "value_str": sh_dimension[1]}}},
         }},
     # Check if dependencies of ReceiverView are contained
     "ReceiverView": {
@@ -250,7 +251,7 @@ rules = {
             coords_min[0]: {
                 "ReceiverView:Units": [units_min[0]]},
             coords_min[1]: {
-                "ReceiverView:Units": [units_min[1]]}
+                "ReceiverView:Units": [units_min[1]]},
             }},
     # Check if dependencies of ReceiverUp are contained
     "ReceiverUp": {
@@ -267,7 +268,7 @@ rules = {
             coords_min[0]: {
                 "SourcePosition:Units": [units_min[0]]},
             coords_min[1]: {
-                "SourcePosition:Units": [units_min[1]]}
+                "SourcePosition:Units": [units_min[1]]},
             }},
     # Check if dependencies of SourceView are contained
     "SourceView": {
@@ -280,7 +281,7 @@ rules = {
             coords_min[0]: {
                 "SourceView:Units": [units_min[0]]},
             coords_min[1]: {
-                "SourceView:Units": [units_min[1]]}
+                "SourceView:Units": [units_min[1]]},
             }},
     # Check if dependencies of SourceUp are contained
     "SourceUp": {
@@ -305,7 +306,7 @@ rules = {
                     # receiver (assuming SH orders < 100)
                     "E": {
                         "value": sh_dimension[0],
-                        "value_str": sh_dimension[1]}}}
+                        "value_str": sh_dimension[1]}}},
         }},
     # Check if dependencies of EmitterView are contained
     "EmitterView": {
@@ -318,7 +319,7 @@ rules = {
             coords_min[0]: {
                 "EmitterView:Units": [units_min[0]]},
             coords_min[1]: {
-                "EmitterView:Units": [units_min[1]]}
+                "EmitterView:Units": [units_min[1]]},
             }},
     # Check if dependencies of EmitterUp are contained
     "EmitterUp": {
@@ -342,7 +343,7 @@ rules = {
     "RoomVolume:Units": {
         "value": ["cubic metre"]},
     "RoomTemperature:Units": {
-        "value": ["kelvin"]}
+        "value": ["kelvin"]},
 }
 
 # write to json files
