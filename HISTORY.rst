@@ -1,6 +1,10 @@
 History
 =======
 
+V2.1.3 (2024-12-11, AES69-2022, SOFA conventions 2.1)
+-----------------------------------------------------
+* Update linting in Python files for new rules in sofar repository
+
 V2.1.2 (2023-7-7, AES69-2022, SOFA conventions 2.1)
 ---------------------------------------------------
 * Add newly proposed AnnotatedEmitterAudio and AnnotatedReceiverAudio conventions
