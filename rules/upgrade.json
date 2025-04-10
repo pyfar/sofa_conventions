@@ -111,10 +111,11 @@
             [
                 [
                     "0.1",
-                    "0.2"
+                    "0.2",
+                    "1.0"
                 ],
                 [
-                    "SimpleHeadphoneIR_1.0"
+                    "SimpleHeadphoneIR_1.1"
                 ],
                 "1"
             ]
@@ -128,6 +129,16 @@
                 },
                 "EmitterDescription": {
                     "target": "EmitterDescriptions",
+                    "moveaxis": null,
+                    "deprecated_dimensions": null
+                },
+                "SourceManufacturer": {
+                    "target": "SourceManufacturers",
+                    "moveaxis": null,
+                    "deprecated_dimensions": null
+                },
+                "SourceModel": {
+                    "target": "SourceModels",
                     "moveaxis": null,
                     "deprecated_dimensions": null
                 }
