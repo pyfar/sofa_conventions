@@ -144,14 +144,14 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "name of the database to which these data belong"
+        "comment": "Unique name of the database to which these data belong."
     },
     "GLOBAL:ListenerShortName": {
         "default": "",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "ID of the subject from the database"
+        "comment": "ID of the subject from the database."
     },
     "ListenerPosition": {
         "default": [
@@ -327,14 +327,14 @@
         "flags": "m",
         "dimensions": "I",
         "type": "double",
-        "comment": "Sampling rate of the coefficients in Data.SOS and the delay in Data.Delay"
+        "comment": "Sampling rate of the coefficients in Data.SOS and the delay in Data.Delay."
     },
     "Data.SamplingRate:Units": {
         "default": "hertz",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": ""
+        "comment": "Unit of the sampling rate."
     },
     "Data.Delay": {
         "default": [
@@ -344,6 +344,6 @@
         "flags": "m",
         "dimensions": "IR, MR",
         "type": "double",
-        "comment": "Broadband delay (in samples resulting from SamplingRate)"
+        "comment": "Additional broadband delay (in samples, with the time interval as described by SamplingRate)."
     }
 }

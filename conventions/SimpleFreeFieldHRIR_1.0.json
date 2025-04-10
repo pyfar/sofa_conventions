@@ -18,7 +18,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "This convention set is for HRIRs recorded under free-field conditions or other IRs created under conditions where room information is irrelevant"
+        "comment": "This convention set is for impulse responses recorded under free-field conditions or conditions with irrelevant room information."
     },
     "GLOBAL:SOFAConventionsVersion": {
         "default": "1.0",
@@ -144,14 +144,14 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "name of the database to which these data belong"
+        "comment": "Unique name of the database to which these data belong."
     },
     "GLOBAL:ListenerShortName": {
         "default": "",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "ID of the subject from the database"
+        "comment": "ID of the subject from the database."
     },
     "ListenerPosition": {
         "default": [
@@ -219,7 +219,7 @@
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": "Source position is assumed to vary for different directions/positions around the listener"
+        "comment": "The source position is assumed to vary around the listener."
     },
     "SourcePosition:Type": {
         "default": "spherical",
@@ -244,7 +244,7 @@
         "flags": "m",
         "dimensions": "eCI, eCM",
         "type": "double",
-        "comment": ""
+        "comment": "Source consists of a single Emitter only."
     },
     "EmitterPosition:Type": {
         "default": "cartesian",
@@ -347,14 +347,14 @@
         "flags": "m",
         "dimensions": "I, M",
         "type": "double",
-        "comment": ""
+        "comment": "Sampling rate of the samples in Data.IR and Data.Delay."
     },
     "Data.SamplingRate:Units": {
         "default": "hertz",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": ""
+        "comment": "Unit of the sampling rate."
     },
     "Data.Delay": {
         "default": [
@@ -364,6 +364,6 @@
         "flags": "m",
         "dimensions": "IR, MR",
         "type": "double",
-        "comment": ""
+        "comment": "Additional delay of each IR (in samples, with the time interval as described by SamplingRate)."
     }
 }

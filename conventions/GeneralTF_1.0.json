@@ -18,7 +18,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "This conventions stores TFs for general purposes, i.e., only the mandatory, SOFA general metadata are pre-defined. This convention is based on GeneralFIR."
+        "comment": "This conventions stores TFs for general purposes, i.e., only the SOFA general metadata are predefined. This convention is based on GeneralFIR."
     },
     "GLOBAL:SOFAConventionsVersion": {
         "default": "1.0",
@@ -64,7 +64,7 @@
     },
     "GLOBAL:Comment": {
         "default": "",
-        "flags": "m",
+        "flags": null,
         "dimensions": null,
         "type": "attribute",
         "comment": ""
@@ -74,7 +74,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "We store frequency-dependent data here"
+        "comment": "We store frequency-dependent data here."
     },
     "GLOBAL:History": {
         "default": "",
@@ -109,7 +109,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "The room information can be arbitrary"
+        "comment": "It can be free field, reverberant, shoebox or dae."
     },
     "GLOBAL:Origin": {
         "default": "",
@@ -193,22 +193,22 @@
         "default": [
             0,
             0,
-            1
+            0
         ],
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": "In order to store different directions/positions around the listener, SourcePosition is assumed to vary"
+        "comment": ""
     },
     "SourcePosition:Type": {
-        "default": "spherical",
+        "default": "cartesian",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
         "comment": ""
     },
     "SourcePosition:Units": {
-        "default": "degree, degree, metre",
+        "default": "metre",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
@@ -244,34 +244,34 @@
         "flags": "m",
         "dimensions": "N",
         "type": "double",
-        "comment": "Frequency values"
+        "comment": "Frequency values."
     },
     "N:LongName": {
         "default": "frequency",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "narrative name of N"
+        "comment": "Narrative name of N."
     },
     "N:Units": {
         "default": "hertz",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Unit of the values given in N"
+        "comment": "Unit of the values given in N."
     },
     "Data.Real": {
         "default": 0,
         "flags": "m",
         "dimensions": "mRn",
         "type": "double",
-        "comment": "The real part of the complex spectrum"
+        "comment": "The real part of the complex spectrum."
     },
     "Data.Imag": {
         "default": 0,
         "flags": "m",
         "dimensions": "MRN",
         "type": "double",
-        "comment": "The imaginary part of the complex spectrum"
+        "comment": "The imaginary part of the complex spectrum."
     }
 }

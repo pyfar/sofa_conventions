@@ -228,9 +228,9 @@
             0
         ],
         "flags": "m",
-        "dimensions": "eC, eCM",
+        "dimensions": "eCI, eCM",
         "type": "double",
-        "comment": "Position of the virtual source(s). eC if not tracked, eCM if tracked."
+        "comment": "Position of the virtual source(s). eCI if not tracked, eCM if tracked."
     },
     "EmitterPosition:Type": {
         "default": "cartesian",

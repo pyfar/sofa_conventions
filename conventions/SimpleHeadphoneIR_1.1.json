@@ -14,14 +14,14 @@
         "comment": ""
     },
     "GLOBAL:SOFAConventions": {
-        "default": "GeneralFIR",
+        "default": "SimpleHeadphoneIR",
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "This conventions stores IRs for general purposes, i.e., only the SOFA general metadata are predefined."
+        "comment": "Conventions for IRs with a one-to-one correspondence between emitter and receiver. The main application is to store headphone IRs recorded for each emitter and each ear."
     },
     "GLOBAL:SOFAConventionsVersion": {
-        "default": "1.0",
+        "default": "1.1",
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
@@ -74,7 +74,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "We store IRs here."
+        "comment": "We will store IRs here."
     },
     "GLOBAL:History": {
         "default": "",
@@ -139,6 +139,69 @@
         "type": "attribute",
         "comment": ""
     },
+    "GLOBAL:DatabaseName": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Unique name of the database to which these data belong."
+    },
+    "GLOBAL:ListenerShortName": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "ID of the subject from the database."
+    },
+    "GLOBAL:ListenerDescription": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Narrative description of the listener (or mannequin)."
+    },
+    "GLOBAL:SourceDescription": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Narrative description of the headphones."
+    },
+    "GLOBAL:SourceManufacturer": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Name of the headphones manufacturer."
+    },
+    "GLOBAL:SourceModel": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Name of the headphone model. Must uniquely describe the headphones of the manufacturer."
+    },
+    "GLOBAL:SourceURI": {
+        "default": "",
+        "flags": null,
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "URI of the headphone specifications."
+    },
+    "GLOBAL:ReceiverDescription": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Narrative description of the microphones."
+    },
+    "GLOBAL:EmitterDescription": {
+        "default": "",
+        "flags": "m",
+        "dimensions": null,
+        "type": "attribute",
+        "comment": "Narrative description of the headphone drivers."
+    },
     "ListenerPosition": {
         "default": [
             0,
@@ -166,12 +229,19 @@
     },
     "ReceiverPosition": {
         "default": [
-            0,
-            0,
-            0
+            [
+                0,
+                0.09,
+                0
+            ],
+            [
+                0,
+                -0.09,
+                0
+            ]
         ],
         "flags": "m",
-        "dimensions": "ICI, RCI, RCM",
+        "dimensions": "rCI, rCM",
         "type": "double",
         "comment": ""
     },
@@ -198,17 +268,17 @@
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": ""
+        "comment": "Headphones position, usually the same as ListenerPosition."
     },
     "SourcePosition:Type": {
-        "default": "cartesian",
+        "default": "spherical",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
         "comment": ""
     },
     "SourcePosition:Units": {
-        "default": "metre",
+        "default": "degree, degree, metre",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
@@ -216,14 +286,21 @@
     },
     "EmitterPosition": {
         "default": [
-            0,
-            0,
-            0
+            [
+                0,
+                0.09,
+                0
+            ],
+            [
+                0,
+                -0.09,
+                0
+            ]
         ],
         "flags": "m",
         "dimensions": "eCI, eCM",
         "type": "double",
-        "comment": ""
+        "comment": "The default the same as ReceiverPosition, reflecting the correspondence of each emitter to each receiver."
     },
     "EmitterPosition:Type": {
         "default": "cartesian",
@@ -239,37 +316,67 @@
         "type": "attribute",
         "comment": ""
     },
-    "ListenerView": {
+    "SourceManufacturers": {
         "default": [
-            1,
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MS",
+        "type": "string",
+        "comment": "Optional M-dependent version of the attribute SourceManufucturer."
+    },
+    "SourceModels": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MS",
+        "type": "string",
+        "comment": "Optional M-dependent version of the attribute SourceModel."
+    },
+    "SourceURIs": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MS",
+        "type": "string",
+        "comment": "Optional M-dependent version of the attribute SourceURI."
+    },
+    "ReceiverDescriptions": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MS",
+        "type": "string",
+        "comment": "M-dependent version of the attribute ReceiverDescription."
+    },
+    "EmitterDescriptions": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MS",
+        "type": "string",
+        "comment": "E-dependent version of the attribute EmitterDescription."
+    },
+    "MeasurementDate": {
+        "default": 0,
+        "flags": null,
+        "dimensions": "M",
+        "type": "double",
+        "comment": "Optional M-dependent date and time of the measurement."
+    },
+    "Data.IR": {
+        "default": [
             0,
             0
         ],
-        "flags": null,
-        "dimensions": "IC, MC",
-        "type": "double",
-        "comment": ""
-    },
-    "ListenerView:Type": {
-        "default": "cartesian",
-        "flags": null,
-        "dimensions": null,
-        "type": "attribute",
-        "comment": ""
-    },
-    "ListenerView:Units": {
-        "default": "metre",
-        "flags": null,
-        "dimensions": null,
-        "type": "attribute",
-        "comment": ""
-    },
-    "Data.IR": {
-        "default": 0,
         "flags": "m",
-        "dimensions": "mrn",
+        "dimensions": "mRn",
         "type": "double",
-        "comment": "Impulse responses."
+        "comment": ""
     },
     "Data.SamplingRate": {
         "default": 48000,
@@ -286,7 +393,10 @@
         "comment": "Unit of the sampling rate."
     },
     "Data.Delay": {
-        "default": 0,
+        "default": [
+            0,
+            0
+        ],
         "flags": "m",
         "dimensions": "IR, MR",
         "type": "double",

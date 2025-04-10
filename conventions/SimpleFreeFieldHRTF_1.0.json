@@ -18,7 +18,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "This conventions is for HRTFs created under conditions where room information is irrelevant"
+        "comment": "This conventions is for HRTFs created under conditions where room information is irrelevant."
     },
     "GLOBAL:SOFAConventionsVersion": {
         "default": "1.0",
@@ -95,7 +95,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "ID of the subject from the database"
+        "comment": "ID of the subject from the database."
     },
     "GLOBAL:Organization": {
         "default": "",
@@ -151,7 +151,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "name of the database to which these data belong"
+        "comment": "Unique name of the database to which these data belong."
     },
     "ListenerPosition": {
         "default": [
@@ -219,7 +219,7 @@
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": "Source position is assumed to vary for different directions/positions around the listener"
+        "comment": "The source position is assumed to vary around the listener."
     },
     "SourcePosition:Type": {
         "default": "spherical",
@@ -244,7 +244,7 @@
         "flags": "m",
         "dimensions": "eCI, eCM",
         "type": "double",
-        "comment": ""
+        "comment": "Source consists of a single Emitter only."
     },
     "EmitterPosition:Type": {
         "default": "cartesian",

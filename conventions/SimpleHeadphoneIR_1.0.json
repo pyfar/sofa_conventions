@@ -7,7 +7,7 @@
         "comment": ""
     },
     "GLOBAL:Version": {
-        "default": "2.1",
+        "default": "2.0",
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
@@ -18,7 +18,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Conventions for IRs with a 1-to-1 correspondence between emitter and receiver. The main application for this convention is to store headphone IRs recorded for each emitter and each ear."
+        "comment": "Conventions for IRs with a one-to-one correspondence between emitter and receiver. The main application is to store headphone IRs recorded for each emitter and each ear."
     },
     "GLOBAL:SOFAConventionsVersion": {
         "default": "1.0",
@@ -74,7 +74,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "We will store IRs here"
+        "comment": "We will store IRs here."
     },
     "GLOBAL:History": {
         "default": "",
@@ -109,7 +109,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Room type is not relevant here"
+        "comment": "It can be free field, reverberant, shoebox or dae."
     },
     "GLOBAL:Origin": {
         "default": "",
@@ -144,63 +144,63 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Correspondence to a database"
+        "comment": "Unique name of the database to which these data belong."
     },
     "GLOBAL:ListenerShortName": {
         "default": "",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Correspondence to a subject from the database"
+        "comment": "ID of the subject from the database."
     },
     "GLOBAL:ListenerDescription": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Narrative description of the listener (or mannequin)"
+        "comment": "Narrative description of the listener (or mannequin)."
     },
     "GLOBAL:SourceDescription": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Narrative description of the headphones"
+        "comment": "Narrative description of the headphones."
     },
     "GLOBAL:SourceManufacturer": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Name of the headphones manufacturer"
+        "comment": "Name of the headphones manufacturer."
     },
     "GLOBAL:SourceModel": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Name of the headphone model. Must uniquely describe the headphones of the manufacturer"
+        "comment": "Name of the headphone model. Must uniquely describe the headphones of the manufacturer."
     },
     "GLOBAL:SourceURI": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "URI of the headphone specifications"
+        "comment": "URI of the headphone specifications."
     },
     "GLOBAL:ReceiverDescription": {
         "default": "",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Narrative description of the microphones"
+        "comment": "Narrative description of the microphones."
     },
     "GLOBAL:EmitterDescription": {
         "default": "",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Narrative description of the headphone drivers"
+        "comment": "Narrative description of the headphone drivers."
     },
     "ListenerPosition": {
         "default": [
@@ -268,7 +268,7 @@
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": "Default: Headphones are located at the position of the listener"
+        "comment": "Headphones position, usually the same as ListenerPosition."
     },
     "SourcePosition:Type": {
         "default": "spherical",
@@ -300,7 +300,7 @@
         "flags": "m",
         "dimensions": "eCI, eCM",
         "type": "double",
-        "comment": "Default: Reflects the correspondence of each emitter to each receiver"
+        "comment": "The default the same as ReceiverPosition, reflecting the correspondence of each emitter to each receiver."
     },
     "EmitterPosition:Type": {
         "default": "cartesian",
@@ -323,7 +323,7 @@
         "flags": null,
         "dimensions": "MS",
         "type": "string",
-        "comment": "Optional M-dependent version of the attribute SourceManufucturer"
+        "comment": "Optional M-dependent version of the attribute SourceManufucturer."
     },
     "SourceModel": {
         "default": [
@@ -332,32 +332,32 @@
         "flags": null,
         "dimensions": "MS",
         "type": "string",
-        "comment": "Optional M-dependent version of the attribute SourceModel"
+        "comment": "Optional M-dependent version of the attribute SourceModel."
     },
-    "ReceiverDescriptions": {
+    "ReceiverDescription": {
         "default": [
             ""
         ],
         "flags": null,
         "dimensions": "MS",
         "type": "string",
-        "comment": "R-dependent version of the attribute ReceiverDescription"
+        "comment": "M-dependent version of the attribute ReceiverDescription."
     },
-    "EmitterDescriptions": {
+    "EmitterDescription": {
         "default": [
             ""
         ],
         "flags": null,
         "dimensions": "MS",
         "type": "string",
-        "comment": "E-dependent version of the attribute EmitterDescription"
+        "comment": "E-dependent version of the attribute EmitterDescription."
     },
     "MeasurementDate": {
         "default": 0,
         "flags": null,
         "dimensions": "M",
         "type": "double",
-        "comment": "Optional M-dependent date and time of the measurement"
+        "comment": "Optional M-dependent date and time of the measurement."
     },
     "Data.IR": {
         "default": [
@@ -374,14 +374,14 @@
         "flags": "m",
         "dimensions": "I, M",
         "type": "double",
-        "comment": ""
+        "comment": "Sampling rate of the samples in Data.IR and Data.Delay."
     },
     "Data.SamplingRate:Units": {
         "default": "hertz",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": ""
+        "comment": "Unit of the sampling rate."
     },
     "Data.Delay": {
         "default": [
@@ -391,6 +391,6 @@
         "flags": "m",
         "dimensions": "IR, MR",
         "type": "double",
-        "comment": ""
+        "comment": "Additional delay of each IR (in samples, with the time interval as described by SamplingRate)."
     }
 }

@@ -18,7 +18,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Single-room multiple-input multiple-output spatial room impulse responses, depending on Emitters"
+        "comment": "Single-room multiple-input multiple-output spatial room impulse responses, depending on Emitters."
     },
     "GLOBAL:SOFAConventionsVersion": {
         "default": "1.0",
@@ -32,14 +32,14 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Shall be FIR-E"
+        "comment": "Shall be FIR-E."
     },
     "GLOBAL:RoomType": {
         "default": "shoebox",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Shall be 'shoebox' or 'dae'"
+        "comment": "Shall be either shoebox or dae."
     },
     "GLOBAL:Title": {
         "default": "",
@@ -144,28 +144,28 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Name of the database. Used for classification of the data."
+        "comment": "Unique name of the database. Used for classification of the data."
     },
     "GLOBAL:RoomShortName": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Short name of the Room"
+        "comment": "Short name of the Room."
     },
     "GLOBAL:RoomDescription": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Informal verbal description of the room"
+        "comment": "Informal narrative description of the room."
     },
     "GLOBAL:RoomLocation": {
         "default": "",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Location of the room"
+        "comment": "Location of the room."
     },
     "GLOBAL:RoomGeometry": {
         "default": "",
@@ -235,28 +235,28 @@
         "flags": null,
         "dimensions": "I, M",
         "type": "double",
-        "comment": "Temperature during measurements, given in Kelvin."
+        "comment": "Temperature during measurements."
     },
     "RoomTemperature:Units": {
         "default": "kelvin",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Units of the room temperature"
+        "comment": "Units of the room temperature."
     },
     "RoomVolume": {
         "default": 0,
         "flags": null,
         "dimensions": "I, MI",
         "type": "double",
-        "comment": "Volume of the room"
+        "comment": "Volume of the room."
     },
     "RoomVolume:Units": {
         "default": "cubic metre",
         "flags": null,
         "dimensions": null,
         "type": "attribute",
-        "comment": "Units of the room volume"
+        "comment": "Units of the room volume."
     },
     "RoomCornerA": {
         "default": [
@@ -285,7 +285,7 @@
         "flags": null,
         "dimensions": "II",
         "type": "double",
-        "comment": "The value of this attribute is to be ignored. It only exist to for RoomCorners:Type and RoomCorners:Units"
+        "comment": "This variable is used to provide attributes RoomCorners:Type and RoomCorners:Units. Its value can be ignored."
     },
     "RoomCorners:Type": {
         "default": "cartesian",
@@ -367,9 +367,9 @@
             ""
         ],
         "flags": null,
-        "dimensions": "RS, RSM",
+        "dimensions": "MSI, RSI, MRS",
         "type": "string",
-        "comment": "R-dependent version of the attribute ReceiverDescription"
+        "comment": "M- and/or R-dependent versions of ReceiverDescription with specific descriptions of the receivers."
     },
     "ReceiverPosition": {
         "default": [
@@ -378,7 +378,7 @@
             0
         ],
         "flags": "m",
-        "dimensions": "IC, RCI, RCM",
+        "dimensions": "ICI, RCI, RCM",
         "type": "double",
         "comment": ""
     },
@@ -387,7 +387,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Can be of any type enabling both spatially discrete and spatially continuous representations."
+        "comment": "Can be \u00e2\u20ac\u02dccartesian\u00e2\u20ac\u2122, \u00e2\u20ac\u02dcspherical\u00e2\u20ac\u2122, or \u00e2\u20ac\u02dcspherical harmonics\u00e2\u20ac\u2122."
     },
     "ReceiverPosition:Units": {
         "default": "degree, degree, metre",
@@ -498,9 +498,9 @@
             ""
         ],
         "flags": null,
-        "dimensions": "ES, ESM",
+        "dimensions": "MSI, ESI, MES",
         "type": "string",
-        "comment": "E-dependent version of the attribute EmitterDescription"
+        "comment": "M- and/or E-dependent version of EmitterDescription with specific descriptions of the emitters."
     },
     "EmitterPosition": {
         "default": [
@@ -509,16 +509,16 @@
             0
         ],
         "flags": "m",
-        "dimensions": "IC, ECI, ECM",
+        "dimensions": "ICI, ECI, ECM",
         "type": "double",
-        "comment": "Can be of any type enabling both spatially discrete and spatially continuous representations."
+        "comment": ""
     },
     "EmitterPosition:Type": {
         "default": "spherical",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": ""
+        "comment": "Can be \u00e2\u20ac\u02dccartesian\u00e2\u20ac\u2122, \u00e2\u20ac\u02dcspherical\u00e2\u20ac\u2122, or \u00e2\u20ac\u02dcspherical harmonics\u00e2\u20ac\u2122."
     },
     "EmitterPosition:Units": {
         "default": "degree, degree, metre",
@@ -575,27 +575,27 @@
         "flags": "m",
         "dimensions": "mrne",
         "type": "double",
-        "comment": "Impulse responses"
+        "comment": "Impulse responses."
     },
     "Data.SamplingRate": {
         "default": 48000,
         "flags": "m",
         "dimensions": "I, M",
         "type": "double",
-        "comment": "Sampling rate of the samples in Data.IR and Data.Delay"
+        "comment": "Sampling rate of the samples in Data.IR and Data.Delay."
     },
     "Data.SamplingRate:Units": {
         "default": "hertz",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Unit of the sampling rate"
+        "comment": "Unit of the sampling rate."
     },
     "Data.Delay": {
         "default": 0,
         "flags": "m",
         "dimensions": "IRI, MRI, MRE",
         "type": "double",
-        "comment": "Additional delay of each IR (in samples)"
+        "comment": "Additional delay of each IR (in samples)."
     }
 }

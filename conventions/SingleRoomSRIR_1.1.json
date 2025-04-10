@@ -21,7 +21,7 @@
         "comment": "For measuring SRIRs in a single room with a single excitation source (e.g., a loudspeaker) and a listener containing an arbitrary number of omnidirectional receivers (e.g., a microphone array)."
     },
     "GLOBAL:SOFAConventionsVersion": {
-        "default": "1.0",
+        "default": "1.1",
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
@@ -362,6 +362,15 @@
         "type": "attribute",
         "comment": ""
     },
+    "ReceiverDescriptions": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MSI, RSI, MRS",
+        "type": "string",
+        "comment": "M- and/or R-dependent versions of ReceiverDescription with specific descriptions of the receivers."
+    },
     "ReceiverPosition": {
         "default": [
             0,
@@ -484,6 +493,15 @@
         "type": "attribute",
         "comment": ""
     },
+    "EmitterDescriptions": {
+        "default": [
+            ""
+        ],
+        "flags": null,
+        "dimensions": "MSI, ESI, MES",
+        "type": "string",
+        "comment": "M- and/or E-dependent version of EmitterDescription with specific descriptions of the emitters."
+    },
     "EmitterPosition": {
         "default": [
             0,
@@ -544,6 +562,13 @@
         "dimensions": null,
         "type": "attribute",
         "comment": ""
+    },
+    "MeasurementDate": {
+        "default": 0,
+        "flags": null,
+        "dimensions": "M",
+        "type": "double",
+        "comment": "Optional M-dependent date and time of the measurement."
     },
     "Data.IR": {
         "default": 0,

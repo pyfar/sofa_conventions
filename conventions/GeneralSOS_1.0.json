@@ -74,7 +74,7 @@
         "flags": "rm",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Filters described as second-order section (SOS) coefficients"
+        "comment": "Filters described as second-order section (SOS) coefficients."
     },
     "GLOBAL:History": {
         "default": "",
@@ -109,7 +109,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "The room information can be arbitrary"
+        "comment": "It can be free field, reverberant, shoebox or dae."
     },
     "GLOBAL:Origin": {
         "default": "",
@@ -196,7 +196,7 @@
             0
         ],
         "flags": "m",
-        "dimensions": "IC, RC, RCM",
+        "dimensions": "ICI, RCI, RCM",
         "type": "double",
         "comment": ""
     },
@@ -218,22 +218,22 @@
         "default": [
             0,
             0,
-            1
+            0
         ],
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": "In order to store different directions/positions around the listener, SourcePosition is assumed to vary"
+        "comment": ""
     },
     "SourcePosition:Type": {
-        "default": "spherical",
+        "default": "cartesian",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
         "comment": ""
     },
     "SourcePosition:Units": {
-        "default": "degree, degree, metre",
+        "default": "metre",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
@@ -287,20 +287,20 @@
         "flags": "m",
         "dimensions": "I, M",
         "type": "double",
-        "comment": "Sampling rate of the coefficients in Data.SOS and the delay in Data.Delay"
+        "comment": "Sampling rate of the coefficients in Data.SOS and the delay in Data.Delay."
     },
     "Data.SamplingRate:Units": {
         "default": "hertz",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Unit of the sampling rate"
+        "comment": "Unit of the sampling rate."
     },
     "Data.Delay": {
         "default": 0,
         "flags": "m",
         "dimensions": "IR, MR",
         "type": "double",
-        "comment": "Broadband delay (in samples resulting from SamplingRate)"
+        "comment": "Additional broadband delay (in samples, with the time interval as described by SamplingRate)."
     }
 }

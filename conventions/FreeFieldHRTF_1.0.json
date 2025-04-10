@@ -95,7 +95,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "ID of the subject from the database"
+        "comment": "Short name of the listener (as for example the subject ID)."
     },
     "GLOBAL:Organization": {
         "default": "",
@@ -151,7 +151,7 @@
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Name of the database to which these data belong"
+        "comment": "Unique name of the database to which these data belong."
     },
     "ListenerPosition": {
         "default": [
@@ -219,7 +219,7 @@
         "flags": "m",
         "dimensions": "IC, MC",
         "type": "double",
-        "comment": "Source position is assumed to be the ListenerPosition in order to reflect Emitters surrounding the Listener"
+        "comment": "In order to describe Emitters surrounding the Listener, SourcePosition needs to be the same as the ListenerPosition."
     },
     "SourcePosition:Type": {
         "default": "spherical",
@@ -242,16 +242,16 @@
             0
         ],
         "flags": "m",
-        "dimensions": "IC, ECI, ECM",
+        "dimensions": "ICI, ECI, ECM",
         "type": "double",
-        "comment": "Radius in 'spherical harmonics', Position in 'cartesian' and 'spherical'"
+        "comment": "In 'spherical harmonics': Spherical coordinates with the valid Emitter radius. In 'cartesian' and 'spherical': 3D coordinate with the positions of the Emitters."
     },
     "EmitterPosition:Type": {
         "default": "spherical harmonics",
         "flags": "m",
         "dimensions": null,
         "type": "attribute",
-        "comment": "Can be 'spherical harmonics', 'cartesian', or 'spherical'"
+        "comment": "Can be 'spherical harmonics', 'cartesian', or 'spherical'."
     },
     "EmitterPosition:Units": {
         "default": "degree, degree, metre",

@@ -249,7 +249,7 @@
             0
         ],
         "flags": "m",
-        "dimensions": "IC, RC, RCM",
+        "dimensions": "ICI, RCI, RCM",
         "type": "double",
         "comment": "Positions of the microphones during the measurements (relative to the Listener)"
     },
@@ -356,7 +356,7 @@
             0
         ],
         "flags": "m",
-        "dimensions": "eC, eCM",
+        "dimensions": "eCI, eCM",
         "type": "double",
         "comment": "Position. In a simple settings, a single emitter is considered that is collocated with the source."
     },
@@ -379,7 +379,7 @@
             ""
         ],
         "flags": null,
-        "dimensions": "MS, ES, MES",
+        "dimensions": "MSI, ESI, MES",
         "type": "string",
         "comment": "A more detailed description of the Emitters. For example, this may be the strings of a violin or the units of a loudspeaker."
     },
@@ -390,7 +390,7 @@
         "type": "double",
         "comment": "Defines the note played by the source during the measurement. The note is specified a MIDI note by the [https://www.midi.org/specifications-old/item/the-midi-1-0-specification MIDI specifications, version 1.0]. Not mandatory, but recommended for tonal instruments."
     },
-    "Description": {
+    "Descriptions": {
         "default": [
             ""
         ],
