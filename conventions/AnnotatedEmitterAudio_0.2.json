@@ -178,9 +178,9 @@
             ]
         ],
         "flags": "m",
-        "dimensions": "rC, rCM",
+        "dimensions": "rCI, rCM",
         "type": "double",
-        "comment": "Position of the ears. RC if not tracked, RCM if tracked."
+        "comment": "Position of the ears. RCI if not tracked, RCM if tracked."
     },
     "ReceiverPosition:Type": {
         "default": "cartesian",

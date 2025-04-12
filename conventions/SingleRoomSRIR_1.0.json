@@ -247,7 +247,7 @@
     "RoomVolume": {
         "default": 0,
         "flags": null,
-        "dimensions": "I, MI",
+        "dimensions": "II, MI",
         "type": "double",
         "comment": "Volume of the room."
     },
